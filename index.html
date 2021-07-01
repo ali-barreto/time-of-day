@@ -59,7 +59,8 @@
 		<h1 class="masthead">Time of Day</h1>
 	</header>
     <main>
-	 <header><h3>An IT121 assingment by Alexa Barreto Portal </h3></header>
+	 <header><h3>A JavaScript Example by Alexa Barreto Portal </h3></header>
+	 <h2 id="greeting"></h2>
 	 <p>This web page uses JavaScript to determine the current hour, 
 		 and presents a different image, custom message, and color 
 		 based on each of the following times of day.
@@ -72,17 +73,76 @@
 		<li>Night (11pm to 5am)</li>
 		</ul>
 	 </p>
-	  <img src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
+	  <img id="pic" src="http://dummyimage.com/300x400" alt="Time of Day" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2013, All Rights Reserved ~
+      <small>&copy; 2020 - <span id="copyright">copyright goes here</span>, All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
     </footer>
 	<script>
-		alert("hello");
+		//we're using the Date () object;
+		let myDate = new Date();
+
+		//we're using hours to determine time of day 0-23;
+		let myHours = myDate.getHours();
+
+
+
+		//declare variables we'll use in advance;
+		let myText = '';
+		let myColor = '';
+		let myPic = '';
+
+		//REMOVE THE LINE BELOW - FOR TESTING ONLY
+		myHours = 13;
+
+		if(myHours < 12){		
+    		//alert('good morning!!');
+			myText = "Good Morning!";
+			myColor = "orange";
+			myPic = "images/morning.jpg";
+		}else{
+    		//alert('good afternoon!!');
+			myText = "Good Afternoon";
+			myColor = "blue";
+			myPic = "images/afternoon.jpg";
+		}
+
+		console.log (myText);
+
+		//load greeting to page 
+		document.getElementById('greeting').innerHTML = myText;
+
+		//change color of greeting text
+		document.getElementById('greeting').style.color = myColor;
+
+		//change color of html element to match greeting;
+		document.querySelector("html").style.backgroundColor = myColor;
+
+
+		//change pic
+		document.getElementById('pic').src = myPic;
+
+
+
+
+
+
+
+		//we'll use this to create a dynamic copyright;
+		let myCopyright = myDate.getFullYear();
+
+		//load copyright info into a span on the page;
+		document.getElementById('copyright').innerHTML = myCopyright;
 	</script>
-    <!-- END Footer -->
+
+
+
+
+
+
+//console.log(myCopyright);
 </body>
 </html>
