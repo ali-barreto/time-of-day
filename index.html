@@ -96,18 +96,17 @@
 		let myPic = '';
 
 		//REMOVE THE LINE BELOW - FOR TESTING ONLY
-		myHours = 2;
+		//myHours = 1;
 
 		if(myHours >= 5 && myHours < 12){		
     		//alert('good morning!!');
 			myText = "Good Morning!";
 			myColor = "orange";
 			myPic = "images/morning.jpg";
-		
+
 		
 		}else if(myHours >= 12 && myHours < 18){	
-
-			myText = "Good Afternoon";
+			myText = "Good Afternoon!";
 			myColor = "blue";
 			myPic = "images/afternoon.jpg";
 		
@@ -117,10 +116,9 @@
 			myPic = "images/evening.jpg";
 
 
+		}else{	
 
-		}else if(myHours >= 2 && myHours < 23){	
-
-			myText = "Good Night";
+			myText = "Good Night!";
 			myColor = "purple";
 			myPic = "images/night.jpg";
 		}
@@ -150,14 +148,16 @@
 		let myCopyright = myDate.getFullYear();
 
 		//load copyright info into a span on the page;
+		
 		document.getElementById('copyright').innerHTML = myCopyright;
+
+
+
+
+		//console.log(myCopyright);
 	</script>
 
 
-
-
-
-
-//console.log(myCopyright);
+	
 </body>
 </html>
